@@ -1,0 +1,539 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary-color: #31511E;
+    --secondary-color: #859F3D;
+    --text-color: #F6FCDF;
+    --bg-color: #fff;
+    --dark-bg-color: #1A1A19;
+}
+
+
+:root[data-theme="dark"] {
+    --primary-color: #F6FCDF;
+    --secondary-color: #3B5A23;
+    --text-color: #1A1A19;
+    --bg-color: #2C2C2B;
+    --dark-bg-color: #000;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    color: var(--text-color);
+}
+
+body {
+    background: var(--bg-color);
+    font-family: "Poppins", sans-serif;
+    color: var(--primary-color);
+
+}
+
+header h2 i {
+    padding-right: 1.2rem;
+}
+
+#darkmode-toggle {
+    visibility: hidden;
+
+}
+
+.toggleClass {
+    width: 4rem;
+    height: 2rem;
+    position: relative;
+    display: block;
+
+    background-color: var(--dark-bg-color);
+    border-radius: 200px;
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.4), inset 0 -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggleClass:after {
+    content: "";
+    height: 1.9rem;
+    width: 1.9rem;
+    border-radius: 100%;
+    background-color: var(--text-color);
+    top: 0.05rem;
+    left: 0.1rem;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+#darkmode-toggle:checked+label {
+    background-color: var(--text-color);
+}
+
+#darkmode-toggle:checked+label:after {
+    left: 4rem;
+    transform: translateX(-100%);
+
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+}
+
+.mainDivs {
+    margin-top: 1rem;
+    height: 40vw;
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+    border: 0px solid var(--secondary-color);
+    border-radius: 1rem;
+    box-shadow: 3px 3px, -1em 0 .4em;
+}
+
+
+#songCard {
+    height: 40vw;
+}
+
+.genreDiv,
+.allSongsName,
+.allSongsHeading {
+    margin: 1rem 0 1rem 1rem;
+}
+
+.allSongsName li {
+    background-color: var(--text-color);
+    list-style: none;
+    width: fit-content;
+    padding: 0.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 0.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.genreDiv {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0 1rem 1rem;
+    color: var(--primary-color);
+}
+
+.genreDiv label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+#genreSelect {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: var(--primary-color);
+    background-color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Change color and border on hover */
+#genreSelect:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+/* Style for dropdown options */
+#genreSelect option {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+}
+
+.allSongHeader {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    align-items: center;
+    color: var(--text-color);
+
+    text-transform: uppercase;
+
+    background-color: var(--primary-color);
+
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* gap: 2rem; */
+}
+
+.searchAllSongs {
+    margin: 1rem;
+    padding: 0.5rem 0.5rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: var(--text-color);
+    color: var(--primary-color);
+    outline: none;
+    transition: all 0.3s ease;
+    height: 0.5rem;
+    width: 35%;
+}
+
+
+
+.allSongsName li {
+    background-color: var(--text-color);
+    list-style: none;
+    width: fit-content;
+    padding: 0.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 0.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.allSongsName li:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    transform: scale(1.05);
+    /* Slightly increase the size */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* Add a subtle shadow */
+}
+
+.card {
+    height: 60%;
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 1rem;
+}
+
+#songCover {
+    width: 100%;
+    height: 80%;
+}
+
+.player {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.musicPlayer {
+    /* margin: 1rem; */
+    height: 2rem;
+    /* width: 100%; */
+}
+
+.controlButtons {
+    padding: 0.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+/* Basic button styling */
+.controlButtons,
+.addToPlaylist {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific for Add to Playlist button */
+.addToPlaylist {
+    cursor: pointer;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    margin: 0 1rem;
+}
+
+/* Hover effects for control buttons */
+.controlButtons:hover,
+.addToPlaylist:hover {
+    background-color: var(--text-color);
+    color: var(--primary-color);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Controls container */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Align the controls and make them stand out */
+#previousSong,
+#nextSong {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+/* Icon inside button styling */
+.controlButtons i {
+    color: inherit;
+    font-size: 1.2rem;
+}
+
+/* Transition for smoother animation */
+.controlButtons,
+.addToPlaylist {
+    transition: all 0.3s ease;
+}
+
+.currentPlaylist,
+.allPlaylist,
+.inputPlaylist {
+    margin: 1rem;
+}
+
+/* .currentPlaylist {
+    height: 20vw;
+
+} */
+
+.allPlaylistDiv li {
+    /* padding: 1rem 0 0 1rem; */
+    text-transform: uppercase;
+    list-style: none;
+    width: fit-content;
+    margin-bottom: 0.2rem;
+    cursor: pointer;
+}
+
+.allPlaylistDiv li:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    transform: scale(1.05);
+    /* Slightly increase the size */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* Add a subtle shadow */
+}
+
+#playlist .inputPlaylist {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin: 1.5rem 1rem 0 1rem;
+}
+
+#playlist .inputPlaylist input {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: var(--text-color);
+    color: var(--primary-color);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Input hover and focus effect */
+#playlist .inputPlaylist input:focus,
+#playlist .inputPlaylist input:hover {
+    border-color: var(--secondary-color);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#playlist .inputPlaylist button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    /* font-size: 1rem; */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Button hover effect */
+#playlist .inputPlaylist button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.currentPlaylist h4 {
+    margin-bottom: 0.5rem;
+    /* font-size: 1.2rem; */
+    font-weight: bold;
+    color: var(--text-color);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: var(--primary-color);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.currentSongs li,
+.allPlaylistDiv li {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    border: 1px solid var(--primary-color);
+    border-radius: 0.5rem;
+    background-color: var(--text-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.currentSongs li {
+    text-transform: capitalize;
+}
+
+.currentSongs li:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    transform: scale(1.05);
+    /* Slightly increase the size */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* Add a subtle shadow */
+}
+
+.remove-song {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: rgb(250, 54, 54);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.remove-song:hover {
+    background-color: darkred;
+}
+
+.currentSongs {
+    max-height: 15rem;
+    overflow-y: auto;
+    padding: 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--text-color);
+}
+
+/* Custom scrollbar styling */
+.currentPlaylist,
+.allPlaylist {
+    margin: 1rem;
+    height: 15vw;
+    /* Set height as per your requirement */
+    overflow-y: auto;
+    /* Enable vertical scrolling when content exceeds height */
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--text-color);
+    /* Styling the scrollbar */
+}
+
+.playlistHeader {
+    display: flex;
+    justify-content: space-between;
+
+    color: var(--text-color);
+
+    text-transform: uppercase;
+
+    background-color: var(--primary-color);
+
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.playlistHeader h4 {
+    align-content: center;
+    margin: 1rem;
+    /* font-size: 1.rem; */
+}
+
+.searchPlaylist {
+    margin: 1rem;
+    padding: 0.5rem 0.5rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: var(--text-color);
+    color: var(--primary-color);
+    outline: none;
+    transition: all 0.3s ease;
+    height: 0.5rem;
+    width: 35%;
+}
+
+.allSongsName {
+    margin: 1rem;
+    height: 25vw;
+    /* Set height as per your requirement */
+    overflow-y: auto;
+    /* Enable vertical scrolling when content exceeds height */
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--text-color);
+    /* Styling the scrollbar */
+}
+
+.currentPlaylist::-webkit-scrollbar,
+.allPlaylist::-webkit-scrollbar,
+.allSongsName::-webkit-scrollbar {
+    width: 8px;
+    /* Adjust the width of the scrollbar */
+}
+
+.currentPlaylist::-webkit-scrollbar-thumb,
+.allPlaylist::-webkit-scrollbar-thumb,
+.allSongsName::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    /* Style the scrollbar thumb */
+}
+
+.currentPlaylist::-webkit-scrollbar-track,
+.allPlaylist::-webkit-scrollbar-track,
+.allSongsName::-webkit-scrollbar-track {
+    background-color: var(--text-color);
+    border-radius: 4px;
+    /* Style the scrollbar track */
+}

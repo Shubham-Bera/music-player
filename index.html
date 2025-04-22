@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music App</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/dbc3fc2d14.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Heading Section -->
+    <header>
+        <h2><i class="fa-solid fa-music"></i>Music Player</h2>
+        <input type="checkbox" id="darkmode-toggle">
+        <label class="toggleClass" for="darkmode-toggle"></label>
+    </header>
+    <section class="main">
+        <div id="allSongs" class="mainDivs">
+            <div class="genreDiv">
+                <label for="genreSelect">Filter by Genre: </label>
+                <select name="genre" id="genreSelect">
+                    <option value="select" selected>Select</option>
+                </select>
+            </div>
+            <div class="allSongHeader">
+                <h3 class="allSongsHeading">All Songs</h3>
+                <input type="text" class="searchAllSongs" placeholder="Search song...">
+            </div>
+
+
+            <div class="allSongsName"></div>
+        </div>
+        <div id="songCard" class="mainDivs">
+            <div class="card">
+                <img src="" alt="songCover" id="songCover">
+                <h4 id="songName"></h4>
+                <p id="songArtist"></p>
+            </div>
+            <div class="player">
+                <audio muted controls src="" class="musicPlayer"></audio>
+            </div>
+            <div class="controls">
+                <button id="previousSong" class="controlButtons"><i class="fa-solid fa-backward"></i></button>
+                <button class="addToPlaylist">ADD TO PLAYLIST</button>
+                <button id="nextSong" class="controlButtons"><i class="fa-solid fa-forward"></i></button>
+            </div>
+
+        </div>
+        <div id="playlist" class="mainDivs">
+            <form class="inputPlaylist">
+                <input type="text" required id="playlistName" placeholder="Enter Playlist Name">
+                <button type="submit" id="createPlaylist">Create Playlist</button>
+            </form>
+            <div class="currentPlaylist">
+                <h4>Current Playlist</h4>
+                <div class="currentSongs"></div>
+            </div>
+            <div class="allPlaylist">
+                <div class="playlistHeader">
+                    <h4>All Playlist</h4>
+                    <input type="text" class="searchPlaylist" placeholder="Search playlist...">
+                </div>
+
+                <div class="allPlaylistDiv"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="index.js"></script>
+</body>
+
+</html>
